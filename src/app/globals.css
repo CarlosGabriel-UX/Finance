@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0908;
+  --color-panel: #171210;
+  --color-panel-2: #201915;
+  --color-line: #2c231d;
+  --color-muted: #9b8f86;
+  --color-ink: #f5efe9;
+  --color-accent: #f07a2a;
+  --color-accent-2: #ff9a4d;
+  --color-up: #4ade80;
+  --color-down: #f87171;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(240, 122, 42, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(240, 122, 42, 0.08), transparent 60%),
+    var(--color-bg);
+  color: var(--color-ink);
+  min-height: 100vh;
+}
+
+@utility panel {
+  @apply rounded-3xl border border-line/80 p-5;
+  background: linear-gradient(180deg, rgba(38, 28, 22, 0.85), rgba(20, 15, 12, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+@utility panel-accent {
+  @apply rounded-3xl p-5;
+  background: linear-gradient(160deg, #c8692b 0%, #7a3b17 45%, #2a1a12 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+@utility chip {
+  @apply rounded-full px-3 py-1.5 text-sm text-muted transition hover:text-ink;
+}
+@utility chip-active {
+  @apply bg-white/10 text-ink;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-medium transition disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-accent text-white hover:bg-accent-2;
+}
+@utility btn-ghost {
+  @apply btn border border-white/10 bg-white/5 text-ink hover:bg-white/10;
+}
+@utility btn-light {
+  @apply btn bg-white text-black hover:bg-white/90;
+}
+@utility input {
+  @apply w-full rounded-xl border border-line bg-black/30 px-3 py-2.5 text-sm text-ink placeholder:text-muted/70 outline-none focus:border-accent;
+}
+@utility label {
+  @apply mb-1 block text-xs font-medium uppercase tracking-wide text-muted;
+}
