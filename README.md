@@ -30,7 +30,7 @@ Sem variáveis de ambiente, o app abre em **modo demonstração**: dados fictíc
 
 Se a confirmação de e-mail estiver ligada no Supabase (Authentication → Providers → Email), cada um precisa confirmar o e-mail antes de entrar.
 
-Para publicar, a Vercel funciona direto: importe o repositório e configure as mesmas variáveis.
+Para publicar, a Vercel funciona direto: importe o repositório e configure as mesmas variáveis. Cada push na `main` gera um novo deploy de produção; depois de mudar variáveis de ambiente, faça um *Redeploy* para elas valerem.
 
 ### Dados de mercado
 
